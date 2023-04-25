@@ -1,0 +1,509 @@
+%\documentclass{./MATHOS_EXAM}
+
+\documentclass{article}
+
+
+\usepackage{PRIMEarxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{fancyhdr}       % header
+\usepackage{graphicx}       % graphics
+\usepackage{xcolor}
+\graphicspath{{media/}}     % organize your images and other figures under media/ folder
+\usepackage{amsmath,amsfonts}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
+
+% Update your Headers here
+\fancyhead[LO]{Running Title for Header}
+% \fancyhead[RE]{Firstauthor and Secondauthor} % Firstauthor et al. if more than 2 - must use \documentclass[twoside]{article}
+
+
+
+  
+%% Title
+\title{A template for Arxiv Style
+%%%% Cite as
+%%%% Update your official citation here when published 
+\thanks{\textit{\underline{Citation}}: 
+\textbf{Authors. Title. Pages.... DOI:000000/11111.}} 
+}
+
+\author{
+  Author1, Author2 \\
+  Affiliation \\
+  Univ \\
+  City\\
+  \texttt{\{Author1, Author2\}email@email} \\
+  %% examples of more authors
+   \And
+  Author3 \\
+  Affiliation \\
+  Univ \\
+  City\\
+  \texttt{email@email} \\
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+
+\definecolor{bordeaux}{rgb}{.38, .1, .22}
+\newcommand\todo[1]{{\bf \textcolor{bordeaux}{#1}}}
+
+%\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+%\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}
+%\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}
+
+%\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+%\theoremstyle{definition}
+\newtheorem{idea}{Idea}
+
+\newtheorem{proof}{Proof}
+
+
+\newcommand{\nota}[3]{{%
+		\color{#2}
+		\marginpar{\color{#2!75!black}\textbf\texttimes}%
+		\textsf{\textbf{[\textbullet#1:}
+			\textsf{\small#3}
+			\textbf{\textbullet]}}%
+}}
+\newcommand{\domagoj}[1]{\nota{domagoj}{red!55!black}{#1}}
+\newcommand{\ignore}[1]{}
+
+
+
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+
+% keywords can be removed
+\keywords{First keyword \and Second keyword \and More}
+
+ 
+
+
+\section{Bichromatic nearest neighbor}
+\ignore{
+\begin{itemize}
+\item
+\href{https://www.cs.umd.edu/class/fall2019/cmsc420-0201/Lects/lect14-kd-query.pdf}{k-d tree, worst case}
+\item
+\href{https://arxiv.org/pdf/1903.04936.pdf}{k-d tree, expected $O\left(2^d + \log n\right)$}
+\item
+\href{https://math.mit.edu/~shor/18.310/huffman.pdf}{Huffman encoding}
+\item
+\href{https://cstheory.stackexchange.com/questions/27499/bichromatic-all-nearest-neighbors}{Closest bichromatic pair}
+\item
+\href{https://www.cs.umd.edu/~nick/papers/nnpaper.pdf}{Nearest Neighbor search}
+\item
+\href{https://arxiv.org/pdf/2110.10283.pdf}{Lower bounds on Nearest Neighbor search}
+\item
+\href{https://www.cs.sbg.ac.at/~forster/courses/polycomp/slides/polycomp02.pdf}{SETH and OVH}
+\item
+\href{https://codeforces.com/blog/entry/45583}{codeforces}
+\item $\mathbb{R}^2$ with $L_1$ metric
+\href{https://stackoverflow.com/questions/8230929/bichromatic-closest-pair-when-r-and-b-are-separated-by-a-vertical-line-continue}{Post 1} and 
+\href{https://stackoverflow.com/questions/8203576/closest-distance-between-two-pointsdisjoint-set}{Post 2} (maybe extendable to general metric using convex hull)
+\item
+\href{https://cp-algorithms.com/geometry/nearest_points.html#algorithm}{Nearest pair of points Competitive Programming}
+\item
+\href{http://web.onda.com.br/abveiga/capitulo14-ingles.pdf}{More Huffman-like trees}
+\href{file:///C:/Users/tprusina/Downloads/forst2005.pdf}{Thorup et al}.
+\end{itemize}
+
+\textbf{Line separated closest pair}
+\begin{itemize}
+\item
+\href{https://cs.stackexchange.com/questions/2415/shortest-distance-between-a-point-in-a-and-a-point-in-b}{Stack exchange proposition}
+\item
+\href{https://cstheory.stackexchange.com/questions/9824/find-shortest-pairwise-distance-of-points-in-on-log-n}{Theorem on lower-bound}
+\item
+\href{https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=7853340637852591905}{Some papers on it}
+\item
+\href{http://www.zgking.com:8080/home/donghui/publications/closestpair.pdf}{On Spatial-Range Closest-Pair Query}
+\item
+\href{http://delab.csd.auth.gr/papers/SIGMOD00cmtv.pdf}{Closest Pair Queries in Spatial Databases}
+\end{itemize}
+
+}
+
+\begin{definition}[k-colored all bichromatic nearest neighbor]
+For a given dimension $d$, number of colors $k$ and sets of points $A_1$, $A_2$, $\dots$, $A_k \subset \mathbb{R}^d$, \domagoj{Can a single point be colored with multiple colors?}{\it all bichromatic nearest neighbor} problem is for each $i = 1 \dots k$ and each point $q \in A_i$ find any point $ p \in \bigcup \limits_{i \neq j} A_j$ such that
+$$
+	p \in \underset{{p \in \bigcup \limits_{i \neq j} A_j}}{\arg \min }\;  d_2 \left(q, p\right)
+$$
+where $d_2(x,y)$ is the euclidean distance between points $x$ and $y$. We can define the same problem for different metrics i.e. $d_1$ and $d_\infty$ and everything will be the same but
+there are faster algorithms for cases $d_1$ and $d_\infty$.
+\end{definition}
+\todo{somewhere here mention lowerbound}
+This problem was introduced in \todo{Geometry book} as a two colored version.
+Later it was studied from a theoretical aspect because of its hardness \todo{(see SETH and OVH)}.
+All bichromatic nearest neighbor has its use in practice in a fine number of problems such as \todo{LIST SOME PROBLEMS}.
+Generally there is no well known algorithm that solves it and is speculated that there can not exist an algorithm that solves it efficiently for general dimension.
+Special cases such as dynamic bichromatic nearest neighbor queries on plane, reverse bichromatic all nearest neighbors, or the most occuring color in some points k-neighborhood, have algorithms that solve them.
+Special cases on plane, such as the above mentioned dynamic bichromatic nearest neighbor queries, are solvable in optimal time. \todo{See reduction to Does there exist a copy of two real numbers in multiset}
+In this paper we provide a simple-to-implement algorithm that solves the general d-dimensional k-colored all bichromatic nearest neighbor with acceptable running time that is also adaptable to solving its variants.
+The whole setup would look like a framework, so to say, and the ideas behind it are the following.
+\begin{idea} We would like to reduce the general k-colored variant of this problem to a all-nearest neighbor problem or to a 2-colored bichromatic nearest neighbor problem, since these problems are well known.
+\end{idea}
+\begin{idea}\label{idea:bigcup} For each point in some set $A_i$ we would like to decompose the whole dataset into some (possibly small) number of disjoint sets $\bigcup\limits_j B_j = A \backslash A_i$ so we could use algorithms for the aforementioned problems.
+\end{idea}
+The idea~\ref{idea:bigcup} leads to a well known algorithm and data structure used in information theory.
+
+\begin{theorem}[Huffman coding]\label{tm:huff}
+Given a distribution $p_1, p_2, \dots p_k$, we can find in time $O(k \log k)$ a complete binary tree such that
+$$ \sum \limits_{i = 1}^k p_i \log_2 \frac{1}{p_i} \leq \sum \limits_{i = 1}^k p_i l_i \leq 1 + \sum \limits_{i = 1}^k p_i \log_2 \frac{1}{p_i} $$
+where $l_i$ is depth of a leaf assigned to the $i$-th distribution.
+\end{theorem}
+Theorem \ref{tm:huff} is a well known result in information theory and its proof is located in \todo{Cormen et al}.
+Lower bound of \ref{tm:huff} is due to Shannon, and its upper bound and greedy construction algorithm are due to Huffman.
+Using this data structure we will try to "encode" each color such that the decomposition from idea \ref{idea:bigcup} has at most $O\left(\log n\right)$ disjoint subsets, and we will try to do if for each color.
+We can do that thanks to the above theorem in the following way.
+\begin{theorem}[Encoded colors tree]\label{tm:logn}
+For a given dimension $d$, number of colors $k$ and sets $A_1, A_2, \dots A_k \subset \mathbb{R}^d$ we can construct a complete binary tree with leaves associated to sets
+$A_i,\ \forall i = 1 \dots n$ and internal nodes associated to union of sets in its subtree in time $O\left(d\, n \log n\right)$, where $n = \sum \limits_{i = 1}^k |A_i|$ is the number of all points.
+\end{theorem}
+\begin{proof}
+Let us denote the size of each set with $w_i = |A_i|$ and note that $w_i$ is the number of times set $A_i$ will be copied.
+For these $w_i$ we define $p_i := \frac{w_i}{n}$.
+$p_i$ make up a distribution which means we can use theorem \ref{tm:huff} to construct a binary tree with leaves associated to distributions $p_i$ i.e. sets $A_i$.
+During construction we copy each point from the current node to its parent so that root of each subtree has a union of points of its leaves.
+Each point from set $A_i$ we need to copy $l_i$ times and this will take $O(d\, l_i)$ operations.
+The set $A_i$ we can copy in time $O(d\, w_il_i)$.
+For all sets our running time is $ \sum \limits_{i=1}^k O(d\,w_i l_i)$
+ By theorem \ref{tm:huff} these $l_i$ are such that
+$$ \sum \limits_{i = 1}^k p_i l_i \leq \sum \limits_{i = 1}^k p_i \log_2 \frac{1}{p_i}. $$
+By expanding $p_i$ we have
+\begin{align*}
+	\sum \limits_{i = 1}^t \frac{w_i}{n} l_i
+	&\leq 1 + \sum \limits_{i = 1}^t \frac{w_i}{n} \log_2 \frac{n}{w_i} \\
+	&\leq 1 + \sum \limits_{i = 1}^t \frac{w_i}{n}\log_2 \frac{n}{\min \limits_{i} w_i} \\
+	&= 1 + \frac{1}{n}\log_2 \frac{n}{\min \limits_i w_i} \sum \limits_{i = 1}^t w_i \\
+	&\leq 1 + \frac{1}{n}\log_2 \frac{n}{\min \limits_i w_i} n \\
+	&= 1 + \log_2 \frac{n}{\min \limits_i w_i} \\
+	&\leq 1 + \log_2 n, \\ 
+	\sum \limits_{i=1}^t w_i l_i &\leq n \left(1 + \log_2 n\right).
+\end{align*}
+From this we can see that our running time is $O\left(d\,n \log n\right)$.\\
+\end{proof}
+
+\begin{remark} For a balanced dataset with $|A_i| = n/k$ we have a running time of $O\left(d\,n \log k\right)$.
+If we want to remove the $d$ from the running time we can copy just the indices.
+If we want to optimize it even more we can sort the whole dataset of points by the size of each colored set, and use $O(n)$ Huffman coding algorithm in which we will save only indexes of the first and last point of that subset.
+\end{remark}
+To use this data structure in the way we planed to we need a little bit of additional information.
+The whole process of additional processing and finding is quite easy and is described in the following theorem.
+\begin{theorem}\label{tm:decompose}
+With the data structure described in theorem \ref{tm:logn} we can for each point from a set $A_i$ find a decomposition of disjoint sets $\bigcup\limits_j B_j = A \backslash A_i$ in amortized $O(\log n)$ time.
+\end{theorem}
+\begin{proof}
+The idea is to precompute hashes using a {\it dfs} in which we always descend into the left child first and in each leaf we save a number, at which time we visited it.
+For each color we have its visit time $time_i$ saved in its leaf.
+Then for every node we save a number $maxTime = \max \left(leftChild.maxTime, rightChild.maxTime\right)$ that denotes the max $time_i$ in its subtree.
+For leaves $maxTime = time_i$.
+This number we can compute while returning from the {\it dfs} recursion and overall cost will be $O(t)$ which is in worst-case $O(n)$.
+Now to find a target leaf for point $i$ we do the following:
+\begin{algorithm}
+\caption{Find($T$, $i$)}\label{alg:decompose}
+\begin{algorithmic}
+    \If {$isLeaf(T)$}
+    \State return $\emptyset$.
+    \ElsIf {$T.leftChild.maxTime < time[i]$}
+    \State return $\left\{T.leftChild.set \right\} \bigcup Find\left(T.rightChild,i\right)$.
+    \Else
+    \State return $Find\left(T.leftChild, i\right) \bigcup \left\{T.rightchild.set\right\}$.
+    \EndIf
+\end{algorithmic}
+\end{algorithm}
+
+By theorem \ref{tm:huff} we will descend exactly $l_i$ times for each point.
+For all points we will descend overall
+$\sum \limits_{i = 1}^k w_il_i = O\left(n \log n\right)$ times which gives $O(\log n)$ amortized time per point.
+We can easily verify by induction that this algorithm \ref{alg:decompose} returns a set of sets who in union give $\bigcup\limits_j B_i = A \backslash A_i$ for a target point $i$, and as such is left as an exercise for the reader.
+\end{proof}
+
+We have a data structure, now we need to make it usefull.
+Given theorems \ref{tm:logn} and \ref{tm:decompose} we can go in two directions: online algorithm and offline algorithm.
+Since this data structure can be view as a binary search tree it seems natural to first explain the online solution for this problem.
+Now the first thing we need to have for this solution is an algorithm or data structure that has $n \cdot P\left(n\right)$ precompute time and can answer {\bf Which point in this set of points is nearest to some given point not living in this set?} in time $Q(n)$ where $n$ is the size of mentioned set.
+Using this we get the following two theorems.
+
+
+\begin{theorem}[Construction time]\label{tm:construct}
+Given the Encoded Colors Tree from theorem \ref{tm:logn} and a data structure with construction time $O\left(nP_d\left(n\right)\right)$, $P_d(n)$ monotonically increasing, we need overall $O\left(nP_d(n)\log n\right)$ time to build this data structure inside every node of the Encoded Colors Tree.
+\end{theorem}
+\begin{proof}
+Since Huffman trees are complete binary trees we have $2k - 1$ nodes which gives a naive upper bound of $O\left(n^2P_d(n)\right)$ construction time.
+Having Huffman tree properties we can do better.
+Let again $w_i := |A_i|$ and let $b_j$ be the size of the set inside node $j$, $\forall j = 1\dots 2k-1$.
+Our construction time of building the given data structure inside all of the nodes is asymptotically bounded above by
+$$ \sum\limits_{j=1}^{2k - 1} b_jP_d(b_j) $$
+which by monotonicity of $P_d(n)$ is
+$$ \sum\limits_{j=1}^{2k - 1} b_jP_d(b_j) \leq
+P_d(n) \sum\limits_{j=1}^{2k - 1} b_j. $$
+By definition of $b_j$ and construction of Encoded Colors tree we have
+$$ \sum\limits_{j = 1}^{2k - 1} b_j = \sum\limits_{i = 1}^n w_il_i $$
+which in turn gives us an asymptotic upper bound of
+$$ \sum\limits_{j = 1}^{2k - 1} b_jP_d(b_j) = O\left( P_d(n)n \log n\right). $$
+\end{proof}
+
+\begin{remark}
+A slight optimization can be made if the datastructure can be split on merged when building the tree.
+\end{remark}
+
+\begin{theorem}[Query time]\label{tm:query}
+Given the augmented Encoded Colors Tree from theorem \ref{tm:construct} whose data structure can answer queries of the form {\bf Find the point inside this set that is closest to the given query point} in time $O\left(Q_d(n)\right)$, $Q_d(n)$ monotonically increasing, we can answer in amortized $O\left(Q_d(n) \log n\right)$ time {\bf Find the nearest bichromatic neighbor of the given query point}.
+\end{theorem}
+\begin{proof}
+Proof is trivial and follows from \ref{tm:decompose} and \ref{tm:construct}.
+Let again $w_i := |A_i|$ and $b_j$ be the size of set in node $j$.
+Using algorithm \ref{alg:decompose} from \ref{tm:decompose} we find $l_i$ disjoint sets for our query point in time $\Theta\left(l_i\right)$.
+Each of these sets can find the closest point to our query point in time $Q_d\left({b_i}_j\right)$ which means we have an asymptotic upper bound of
+$$ \sum\limits_{j = 1}^{l_i} Q_d\left({b_i}_j\right) \leq \sum\limits_{j = 1}^{l_i}Q_d\left(n\right) = Q\left(n\right)l_i. $$
+Now since we found the closest point in each of disjoint sets $B_j$, who in union give $A\backslash A_i$, we know that the closest point of those $l_i$ points is the nearest bichromatic neighbor to our query point, thus we have our answer.
+Now the overall running time to query all points is bounded above by
+$$ \sum\limits_{i = 1}^n w_i \sum\limits_{j = 1}^{l_i} Q_d\left({b_i}_j\right)
+    \leq \sum\limits_{i = 1}^n w_iQ_d\left(n\right)l_i = Q_d\left(n\right) \sum\limits_{i = 1}^n w_il_i = O\left(Q_d(n)n\log n\right) $$
+which in turn gives us an amortized running time of $O\left(Q_d(n)\log n\right)$ per query.
+\end{proof}
+
+\begin{remark}
+An optimization can be made by passing information from the above node to the below nodes when doing a query.
+Information may help in some cases for example when passing the current best distance we can limit the search space for other calculations.
+Information passing can be done in the reverse manner where we go from leaf to root and propagate results upwards.
+\end{remark}
+
+We summarize the above two theorems into the following corollary.
+\begin{corollary}\label{cor:online}
+For some dimension $d$, given a data structure with precompute time $O\left(n\, P_d(n)\right)$
+that can answer find the nearest neighbor in time $O\left(Q_d(n)\right)$, we can solve the $k$-colored all bichromatic nearest neighbor in time $O\left(n \log n \left(P_d(n) + Q_d(n)\right)\right)$, independent of the number of colors.
+\end{corollary}
+\begin{proof} Theorems \ref{tm:construct} and \ref{tm:query} \end{proof}
+\begin{remark}
+Given superadditive $P_d(n)$ and $Q_d(n)$ we can easily show the running of the above method to be $O(nQ_d(n) + nP_d(n))$ which can be easily proven to be $\Omega(n^2)$.
+\end{remark}
+\begin{remark}
+In terms of Master Theorem we can view the running time of the whole procedure as a recursion of the form
+$$ T(n) = 2T(n/2) + O(P(n) + Q(n)), $$
+which is the case for datasets with same sized colored sets.
+\end{remark}
+
+Corollary \ref{cor:online} has a constructive proof and, in terms of fine-grained complexity theory, gives a reduction to Nearest Neighbors Search problem.
+In mathematical terms that would mean the following.
+\begin{corollary}
+If nearest neighbor search can be solved in time $O(n^{1-\varepsilon_1}poly(d))$ then $k$-colored all bichromatic nearest neighbor can be solved in time $O(n^{2-\varepsilon_2}poly(d))$, independent of the number of colors.
+\end{corollary}
+This information isn't anything new.
+Nearest neighbor search was extensively research in the past decade and a lot of results were proven for conditional hardness of it and similar problems.
+\todo{CITE A LOT OF WORK from Rubinstein.}
+Our framework given above is also extendable to $k$-nearest bichromatic neghbors, bichromatic closest pair, approximate bichromatic nearest neighbor, randomized bichromatic nearest neighbor, in general $l_p$ metric bichromatic nearest neighbor, and so on, given the appropriate data structure.
+This fact implies a lot of hardness results e.g. approximate nearest neighbor search in $O(n^{1-\varepsilon})$ implies approximate bichromatic nearest neighbor search in $O(n^{1-\varepsilon})$\todo{cite Rubinstine}.
+
+One that we explained the online approach of this framework, we can easily adapt it to an offline approach in which we in bulk calculate the nearest neighbors for sets of points in the following manner.
+
+\begin{theorem}[$k\to 2$]\label{tm:k2color}
+Given the Encoded Colors Tree form theorem \ref{tm:logn} and an algorithm $Alg(S_1, S_2)$ that can solve the 2-color all bichromatic nearest neighbor, we can solve the $k$-color all bichromatic nearest neighbor.
+\end{theorem}
+\begin{proof}
+The algorithm is straightforward and is similar to the one in \ref{tm:query}.
+\begin{algorithm}
+\caption{Calculate($T$)}\label{alg:k2color}
+\begin{algorithmic}
+    \If {$isLeaf(T)$}
+    \State return $\emptyset$.
+    \Else
+    \State $rec\_results := Calculate(T.leftChild) \bigcup Calculate(T.righChild)$,
+    \State return $\min\left(rec\_results, Alg\left(T.lefChild.set, T.righChild.set\right)\right)$.
+    \EndIf
+\end{algorithmic}
+\end{algorithm}
+Each left child is disjoint to the right child and in union give the whole subset located in the respective subtree.
+\end{proof}
+\begin{remark}
+Using $Alg$ with running time $f(b_1,b_2)$, we can have a running time of $O(f(n,n)\log n)$ or $O(f(n,n))$ for the $k$-color all bichromatic nearest neighbor, depending on the properties of $f(b_1,b_2)$.
+\end{remark}
+The offline version of this framework is in principal the same as the online version.
+The same generalization can be made for this case i.e. we can extend this offline version to $k$-color bichromatic closest pair problem, approximate bichromatic closest pair problem, randomized
+
+\begin{corollary}
+$k$-color all bichromatic nearest neighbor is as hard as $2$-color all bichromatic nearest neighbor and the running time doesn't depend on the number of colors.
+\end{corollary}
+
+\section*{Approximate bichromatic nearest neighbor }
+
+Let  $A_1$, $A_2$, $\dots$, $A_t \subset \mathbb{R}^d$. In {\it all bichromatic approximate nearest neighbor} problem, for each $i = 1 \dots t$ and each $q \in A_i$, we want to find 
+a point $ z \in \bigcup \limits_{i \neq j} A_j$ such that $d_2(q,p)\le d_2(q,z) \le (1+\varepsilon) d_2(q, p)$, where 
+$
+	p \in \underset{{p \in \bigcup \limits_{i \neq j} A_j}}{\arg \min }\;  d_2 \left(q, p\right).
+$
+We will show that all bichromatic approximate nearest neighbor problem can be computed in $O(n\log n)$ time with the 
+help of the well-separated pair decomposition, a well-know geometric decomposition introduced in a seminar work of 
+Callahan and Kosaraju in 1995 \cite{callahan95-phd, callahan95}.
+
+\paragraph{Well-separated pair decomposition.} Let $S$ be a set of $n$ points in $\mathbb{R}^d$. For any $A \subseteq S$, let $R(A)$ denote the minimum enclosing axis-aligned box of $A$.  Let $C_A$ be the minimum enclosing ball of $R(A)$, and let 
+$r(A)$ denote the radius of $C_A$.  Let $C^{r(A)}$ be the ball with the same center as 
+$C_A$, but with radius $r(A)$.  Furthermore, for two sets $A$, $B \subseteq S$, let $r = \max(r(A), r(B))$, and let $d(A, B)$ denote the minimum distance between $C^{r}_A$ and $C^{r}_B$.  For example, if the $C_A$ intersects $C_B$, then $d(A,B) = 0$.
+
+\begin{definition}
+A pair of sets $A$ and $B$ are said to be well-separated if $d(A, B) > s \cdot r$, for 
+any given separation constant $s>0$ and $r = \max\{r(A), r(B)\}$. 
+\end{definition}
+
+\ignore{
+\begin{figure}
+  \centering
+  \includegraphics[width=.63\linewidth]{figures/dumbell.png} 
+  \caption{An example of a dumbbell for a pair of sets $(A, B)$. }
+  \label{fig:fig1}
+\end{figure}
+}%ignore
+ 
+
+\begin{definition}[WSPD]\label{wspd:def}
+A well-separated pair decomposition of $S\subset \mathbb{R}^d$, for a given $s>0$, is 
+a sequence $(A_1, B_1), \ldots, (A_k, B_k)$, where $A_i, B_i\subseteq S$, such that 
+\begin{enumerate}
+    \item $A_i, B_i$ are well-separated with respect to separation constant $s$, for all $i=1,\ldots, k$;
+    \item for all $p\neq q\in S$ there exists a unique pair $(A_i, B_i)$ such that 
+    $p\in A_i, q\in B_i$ or $q\in A_i, p\in B_i$. 
+\end{enumerate}
+\end{definition}
+Note that WSPD always exists since one could use all singleton pairs $(\{p\},\{q\})$, 
+for all pairs $p, q\in S$. However, this would yield a sequence of dumbbells of size
+$k = \Theta(n^2)$. The  question is whether one could do better than that. The 
+answer to that question was given by the following theorem.
+\begin{theorem}[\cite{callahan95}]\label{tm:WSPD}
+Given a set $S$ of $n$ points in $\mathbb{R}^d$ and a separation constant $s>0$, 
+a WSPD of $S$ with $O(s^d d^{d/2}n)$ many dumbbells can be computed in 
+$O(dn\log n + s^d d^{d/2}n)$.
+\end{theorem}
+
+We will choose the separation constant $s$ and modify the construction of WSPD such that it can be reused in the context 
+of our problem. 
+
+Let $(A_i, B_i)$, $i=1, \ldots, k$, denote the WSPD for some set of points $S\subset \mathbb{R}^d$. 
+For $a, a' \in A_i$ and $b, b' \in B_i$ for some dumbbell $i$, we make the following observations:
+\begin{enumerate}
+    \item Points within the sets $A_i$ and $B_i$ can be made 'arbitrarily close' as compared to points in the opposite sets by choosing the appropriate 
+    separation $s>0$, i.e. 
+        \begin{equation}
+            d(a, a') \le 2 r < \frac{2}{s} d(A_i, B_i) \le \frac{2}{s} d(a, b) .
+        \end{equation}
+    \item Distances between points in the opposite sets can be made 'almost equal', by choosing the appropriate $s>0$, i.e. 
+        \begin{equation}\label{eq:wspd_guarantee}
+                d(a', b') \le d(a, a') + d(a, b) + d(b, b') < (1+\frac{4}{s}) d(a, b).
+        \end{equation}
+\end{enumerate}
+Thus, for $s = \frac{4}{\varepsilon}$, we have that $d(a', b')\le (1+\varepsilon) d(a, b)$, for any $\varepsilon>0$.
+
+
+
+\paragraph{Construction of WSPD with an additional color information.} For the construction of WSPD the split tree of a 
+set $S$ is computed by the following recursive algorithm: 
+\begin{algorithm}
+\caption{SplitTree($S$)}\label{alg:splittree}
+\begin{algorithmic}
+    \If {$\textrm{size}(S) = 1$} 
+    \State return $\textrm{leaf}(S)$.
+    \Else
+    \State Partition $S$ into sets $S_1$ and $S_2$ by halving $R(S)$ with hyperplane along its longest side. 
+    \State Return a node with children (SplitTree($S_1$), SplitTree($S_2$).
+    \EndIf
+\end{algorithmic}
+\end{algorithm}
+Even though such a tree might have linear depth and therefore a naive construction of SplitTree~\ref{alg:splittree} takes
+quadratic time, the work of \cite{callahan_95} showed how to compute such a binary tree in $O(n\log n)$ time. With every 
+node $u$ of that tree w3e can conceptually associate the set $S_u$ of all points contained in its subtree. Node $u$
+is called colorful node if $S_u$ contains points from two or more colors. Otherwise, we say that $S_u$ is monochromatic. 
+
+\begin{definition}[Colorful edge]
+Let $u$ and $w$ denote two nodes in a split tree such that the corresponding 
+set of points $(S_u, S_w)$ for a well-separated pair. If either $S_u$ or $S_w$ is colorful, then the ($S_u$, $S_w$) is called
+colorful edge. If both $S_u$ and $S_w$ are monochromatic, but colored with different colors, then ($S_u$, $S_w$) is called colorful edge. 
+\end{definition}
+In order to compute the subset of WSPD consisting only of colorful edges, for each internal node $u$ of the split tree $T$ with
+children $v,w$ and $v_l, v_r$ and $w_l, w_r$ denoting left and right child of $v,w$ respectively, we invoke Algorithm~\ref{alg:coloredpairs}. 
+\begin{algorithm}
+\caption{FindColorfulEdges($v, w$)}\label{alg:coloredpairs}
+\begin{algorithmic}
+\Require Split tree $T$ of $S$, separation constant $s>0$
+\If {$S_v$ and $S_w$ are well-separated and $(S_v, S_w)$ colorful}
+    \State add additional edge $(v, w)$ to the tree $T$.
+\ElsIf{$L_{\max}(S_v) > L_{\max}(S_w)$}
+    \State FindColorfulEdges($v_l$, $w$), FindColorfulEdges($v_r$, $w$)
+\Else
+    \State FindColorfulEdges($v$, $w_l$), FindColorfulEdges($v$, $w_r$)
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+Let $C_S$ denote the set of colorful edges computed by Algorithm~\ref{alg:coloredpairs}. 
+Note that $C_S$ is a subset of WSPD of $S$. Furthermore, for 
+any node $u$ of the split tree $T$, let $C_{S_u}\subseteq C_S$ denote the
+set of all colorful edges such that $(S_w, S_v)\in C_S$, for nodes $v, w \in T$, and 
+$v$ ancestor of $u$. We 
+consider $u$ to be an ancestor of itself. 
+Let $(S_{w'}, S_u) = \arg\min_{(S_w, S_v)\in C_{S_u}} d(S_w, S_v)$, i.e. $(S_{w'}, S_u)$ is 
+the 'shortest' colorful edge in $C_{S_u}$. We save that information with every node $v\in T$. 
+\begin{theorem}
+Given a set $S$ of $n$ points in $R^d$, AND $k$ COLORS,  the approximate 
+all-bichromatic nearest neighbors problem can be solved in $O(n \log n)$ time. 
+\end{theorem}
+\begin{proof}
+Let $p$ by any point in $S$ and let $q\in S$ be its bichromatic nearest neighbor. Let $u$
+denote the leaf in the split tree that stores $q$, and let $(S_{w'}, S_u$ is the 
+shortest colorful edge saved with $u$. Then $p\in $
+\end{proof}
+
+\section*{Planar cases}
+\todo{Explain the Voronoi solution, explain simple solution to $l_1$ case.}
+
+
+
+%Bibliography
+\bibliographystyle{unsrt}  
+\bibliography{references}  
+
+
+\end{document}
+
