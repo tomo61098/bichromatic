@@ -27,6 +27,7 @@ numpages = {24},
 keywords = {all nearest neighbors, fast multipole method}
 }
 
+
 @inproceedings{Pankaj1990,
 author = {Agarwal, Pankaj K. and Edelsbrunner, Herbert and Schwarzkopf, Otfried and Welzl, Emo},
 title = {Euclidean Minimum Spanning Trees and Bichromatic Closest Pairs},
@@ -44,7 +45,7 @@ location = {Berkley, California, USA},
 series = {SCG '90}
 }
 
-@article{Khuller1991,
+@article{Khuller1995,
 title = {A Simple Randomized Sieve Algorithm for the Closest-Pair Problem},
 journal = {Information and Computation},
 volume = {118},
@@ -57,3 +58,189 @@ url = {https://www.sciencedirect.com/science/article/pii/S0890540185710498},
 author = {S. Khuller and Y. Matias},
 abstract = {We present a linear time randomized sieve algorithm for the closest-pair problem. The algorithm and its analysis are simple. The algorithm is extended to obtain a randomized linear time approximation algorithm for the closest bichromatic pair problem.}
 }
+
+@Article{Eppstein1995,
+author={Eppstein, D.},
+title={Dynamic Euclidean minimum spanning trees and extrema of binary functions},
+journal={Discrete {\&} Computational Geometry},
+year={1995},
+month={Jan},
+day={01},
+volume={13},
+number={1},
+pages={111-122},
+abstract={We maintain the minimum spanning tree of a point set in the plane subject to point insertions and deletions, in amortized timeO(n1/2 log2n) per update operation. We reduce the problem to maintaining bichromatic closest pairs, which we solve in timeO(ne) per update. Our algorithm uses a novel construction, theordered nearest neighbor path of a set of points. Our results generalize to higher dimensions, and to fully dynamic algorithms for maintaining minima of binary functions, including the diameter of a point set and the bichromatic farthest pair.},
+issn={1432-0444},
+doi={10.1007/BF02574030},
+url={https://doi.org/10.1007/BF02574030}
+}
+
+@misc{Rubinstein2018,
+      title={Hardness of Approximate Nearest Neighbor Search}, 
+      author={Aviad Rubinstein},
+      year={2018},
+      eprint={1803.00904},
+      archivePrefix={arXiv},
+      primaryClass={cs.CC}
+}
+
+@inproceedings{Borgelt2008,
+  title={Notes on the Dynamic Bichromatic All-Nearest-Neighbors Problem},
+  author={Magdalene G. Borgelt and Christian Borgelt},
+  year={2008}
+}
+
+@article{Aggrawal1992,
+title = {Optimal time bounds for some proximity problems in the plane},
+journal = {Information Processing Letters},
+volume = {42},
+number = {1},
+pages = {55-60},
+year = {1992},
+issn = {0020-0190},
+doi = {https://doi.org/10.1016/0020-0190(92)90133-G},
+url = {https://www.sciencedirect.com/science/article/pii/002001909290133G},
+author = {Alok Aggarwal and Herbert Edelsbrunner and Prahakar Raghavan and Prasoon Tiwari},
+keywords = {Computational geometry, upper and lower bounds, point sets, simple polygons, Euclidean distance, algebraic decision tree model, integer element uniqueness problem},
+abstract = {Given a sequence of n points that form the vertices of a simple polygon, we show that determining a closest pair requires Ω(n log n) time in the algebraic decision tree model. Together with the well-known O(n log n) upper bound for finding a closest pair, this settles an open problem of Lee and Preparata. We also extend this O(n log n) upper bound to the following problem: Given a collection of sets with a total of n points in the plane, find for each point a closest neighbor that does not belong to the same set.}
+}
+
+@InProceedings{Dumitrescu2002,
+author="Dumitrescu, Adrian
+and Guha, Sumanta",
+editor="Sloot, Peter M. A.
+and Hoekstra, Alfons G.
+and Tan, C. J. Kenneth
+and Dongarra, Jack J.",
+title="Extreme Distances in Multicolored Point Sets",
+booktitle="Computational Science --- ICCS 2002",
+year="2002",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="14--25",
+abstract="Given a set of n points in some d-dimensional Euclidean space, each point colored with one of k( ≥ 2) colors, a bichromatic closest (resp., farthest) pair is a closest (resp., farthest) pair of points of different colors. We present efficient algorithms to compute a bichromatic closest pair and a bichromatic farthest pair. We consider both static, and dynamic versions with respect to color flips. We also give some combinatorial bounds on the multiplicities of extreme distances in this setting.",
+isbn="978-3-540-47789-1"
+}
+
+@misc{Pagh2019,
+      title={Hardness of Bichromatic Closest Pair with Jaccard Similarity}, 
+      author={Rasmus Pagh and Nina Stausholm and Mikkel Thorup},
+      year={2019},
+      eprint={1907.02251},
+      archivePrefix={arXiv},
+      primaryClass={cs.CC}
+}
+
+@InProceedings{FloresVelazco2021,
+  author =	{Flores-Velazco, Alejandro and Mount, David M.},
+  title =	{{Boundary-Sensitive Approach for Approximate Nearest-Neighbor Classification}},
+  booktitle =	{29th Annual European Symposium on Algorithms (ESA 2021)},
+  pages =	{44:1--44:15},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-204-4},
+  ISSN =	{1868-8969},
+  year =	{2021},
+  volume =	{204},
+  editor =	{Mutzel, Petra and Pagh, Rasmus and Herman, Grzegorz},
+  publisher =	{Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{https://drops.dagstuhl.de/opus/volltexte/2021/14625},
+  URN =		{urn:nbn:de:0030-drops-146252},
+  doi =		{10.4230/LIPIcs.ESA.2021.44},
+  annote =	{Keywords: approximate nearest-neighbor searching, nearest-neighbor classification, geometric data structures, space-time tradeoffs}
+}
+
+
+
+@article{Horst2022,
+  author       = {Thijs van der Horst and
+                  Maarten L{\"{o}}ffler and
+                  Frank Staals},
+  title        = {Chromatic k-Nearest Neighbor Queries},
+  journal      = {CoRR},
+  volume       = {abs/2205.00277},
+  year         = {2022},
+  url          = {https://doi.org/10.48550/arXiv.2205.00277},
+  doi          = {10.48550/arXiv.2205.00277},
+  eprinttype    = {arXiv},
+  eprint       = {2205.00277},
+  timestamp    = {Wed, 11 May 2022 17:33:36 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2205-00277.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Williams2005,
+title = {A new algorithm for optimal 2-constraint satisfaction and its implications},
+journal = {Theoretical Computer Science},
+volume = {348},
+number = {2},
+pages = {357-365},
+year = {2005},
+note = {Automata, Languages and Programming: Algorithms and Complexity (ICALP-A 2004)},
+issn = {0304-3975},
+doi = {https://doi.org/10.1016/j.tcs.2005.09.023},
+url = {https://www.sciencedirect.com/science/article/pii/S0304397505005438},
+author = {Ryan Williams},
+keywords = {Exact algorithms, Constraint satisfaction, MAX-2-SAT, MAX-CUT},
+abstract = {We present a novel method for exactly solving (in fact, counting solutions to) general constraint satisfaction optimization with at most two variables per constraint (e.g. MAX-2-CSP and MIN-2-CSP), which gives the first exponential improvement over the trivial algorithm. More precisely, the runtime bound is a constant factor improvement in the base of the exponent: the algorithm can count the number of optima in MAX-2-SAT and MAX-CUT instances in O(m32ωn/3) time, where ω<2.376 is the matrix product exponent over a ring. When the constraints have arbitrary weights, there is a (1+ε)-approximation with roughly the same runtime, modulo polynomial factors. Our construction shows that improvement in the runtime exponent of either k-clique solution (even when k=3) or matrix multiplication over GF(2) would improve the runtime exponent for solving 2-CSP optimization. Our approach also yields connections between the complexity of some (polynomial time) high-dimensional search problems and some NP-hard problems. For example, if there are sufficiently faster algorithms for computing the diameter of n points in ℓ1, then there is an (2-ε)n algorithm for MAX-LIN. These results may be construed as either lower bounds on the high-dimensional problems, or hope that better algorithms exist for the corresponding hard problems.}
+}
+
+@article{Impagliazzo2001,
+title = {On the Complexity of k-SAT},
+journal = {Journal of Computer and System Sciences},
+volume = {62},
+number = {2},
+pages = {367-375},
+year = {2001},
+issn = {0022-0000},
+doi = {https://doi.org/10.1006/jcss.2000.1727},
+url = {https://www.sciencedirect.com/science/article/pii/S0022000000917276},
+author = {Russell Impagliazzo and Ramamohan Paturi},
+abstract = {The k-SAT problem is to determine if a given k-CNF has a satisfying assignment. It is a celebrated open question as to whether it requires exponential time to solve k-SAT for k⩾3. Here exponential time means 2δn for some δ>0. In this paper, assuming that, for k⩾3, k-SAT requires exponential time complexity, we show that the complexity of k-SAT increases as k increases. More precisely, for k⩾3, define sk=inf{δ:there exists 2δn algorithm for solving k-SAT}. Define ETH (Exponential-Time Hypothesis) for k-SAT as follows: for k⩾3, sk>0. In this paper, we show that sk is increasing infinitely often assuming ETH for k-SAT. Let s∞ be the limit of sk. We will in fact show that sk⩽(1−d/k)s∞ for some constant d>0. We prove this result by bringing together the ideas of critical clauses and the Sparsification Lemma to reduce the satisfiability of a k-CNF to the satisfiability of a disjunction of 2εnk′-CNFs in fewer variables for some k′⩾k and arbitrarily small ε>0. We also show that such a disjunction can be computed in time 2εn for arbitrarily small ε>0.}
+}
+
+@inproceedings{Bringmann2019,
+  title={Fine-Grained Complexity Theory},
+  author={Karl Bringmann},
+  year={2019}
+}
+
+@incollection{Bringmann2021,
+	doi = {10.1007/978-3-030-80049-9_6},
+  
+	url = {https://doi.org/10.1007%2F978-3-030-80049-9_6},
+  
+	year = 2021,
+	publisher = {Springer International Publishing},
+  
+	pages = {60--70},
+  
+	author = {Karl Bringmann},
+  
+	title = {Fine-Grained Complexity Theory: Conditional Lower Bounds for Computational Geometry},
+  
+	booktitle = {Lecture Notes in Computer Science}
+}
+
+@misc{ODonnell2009,
+      title={Optimal lower bounds for locality sensitive hashing (except when q is tiny)}, 
+      author={Ryan O'Donnell and Yi Wu and Yuan Zhou},
+      year={2009},
+      eprint={0912.0250},
+      archivePrefix={arXiv},
+      primaryClass={cs.DS}
+}
+
+@misc{Alman2016,
+      title={Polynomial Representations of Threshold Functions and Algorithmic Applications}, 
+      author={Josh Alman and Timothy M. Chan and Ryan Williams},
+      year={2016},
+      eprint={1608.04355},
+      archivePrefix={arXiv},
+      primaryClass={cs.DS}
+}
+
+
+
+
+

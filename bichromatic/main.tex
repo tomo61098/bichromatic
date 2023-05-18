@@ -146,92 +146,31 @@ This is only a summary containing the most relevant details. Please read the com
 
 \section{Overview}
 
-\begin{enumerate}
-    \item Bichromatic pair hard as Euclidean MST \href{https://users.cs.duke.edu/~pankaj/publications/papers/emst.pdf}{link}
-    \item Closest bichromatic pair in expected $O(n)$, \href{https://www.cs.umd.edu/~samir/grant/cp.pdf}{link}
-    \item \href{https://arxiv.org/pdf/2110.10283.pdf}{Fine grained analysis}:
-    \begin{itemize}
-        \item Bichromatic closest pair in $O(n^2)$ theorem,
-        \item Nearest neighbor query in preprocess $O(n^2)$ and query in $O(n)$,
-    \end{itemize}
-    \item \href{https://arxiv.org/pdf/1803.00904.pdf}{Hardness of approximate nearest neighbor}:
-    \begin{itemize}
-        \item For any $\varepsilon > 0$, $(1 + \varepsilon)$-approximation of Bichromatic closest pair in $O(n^2)$,
-        \item For any $\varepsilon > 0$ $(1 + \varepsilon)$-approximation of nearest neghbor query in $O(n)$,
-    \end{itemize}
-    \item Hardness of all nearest neighbors in $O(n^2)$ \href{https://arxiv.org/pdf/1709.05282.pdf}{link}
-    
-    \item  \href{https://www.ics.uci.edu/~eppstein/pubs/Epp-DCG-95.pdf}{Eppstein}
-    \begin{itemize}
-        \item Dynamic bichromatic closest pair in $O(T(n)\log n)$ insert $O(T(n) \log^2 n)$ delete,
-        \item Dynamic Euclidean MST in $O(n^2)$,
-        \item Dynamic bichromatic closest pair for $l_1$ and $l_\infty$ in $O(\log^d n)$,
-    \end{itemize}
-    
-    \item Dynamic bichromatic in $\mathbb R^2$ in $O(n log n)$ time using Voronoi \href{https://borgelt.net/papers/ewcg_07.pdf}{link},
-    
-    \item Dynamic most occuring color in $k$-nearest neighbors 
-    \href{https://arxiv.org/pdf/2205.00277.pdf}{link}
-    
-    \item Approximate dynamic most occuring color in $k$-nearset neighbors \textbf{ESA 2021} \href{https://drops.dagstuhl.de/opus/volltexte/2021/14625/pdf/LIPIcs-ESA-2021-44.pdf}{link},
-    
-    \item Geometry handbook chromatic closest pair \href{https://www.csun.edu/~ctoth/Handbook/chap43.pdf}{link}
-    
-    \item Approximate closest pair in $O(n \sqrt{n})$ \textbf{ITCS 2019}
-    \href{https://cs.emis.de/LIPIcs/volltexte/2018/10110/pdf/LIPIcs-ITCS-2019-17_.pdf}{link}
-    
-    \item Bichromatic closest pair with Jaccard similarity in $O(n^2)$ \textbf{ESA 2019} \href{https://arxiv.org/pdf/1907.02251.pdf}{link}
-\end{enumerate}
-
-\todo{Introduction}
-Euclidean MST = BCP~\cite{Pankaj1990}
-BCP in expected $O(n)$~\cite{Khuller1991}
+Bichromatic closest pair was first introduced in~\cite{Pankaj1990} where Pankaj et al. give a reduction of euclidean minimum spannig tree to two colored bichromatic closest pair and compare their hardness.
+They also provide a randomized algorithm for computing the bichromatic closest pair which runs in expected $O((nm)^{1-\frac{1}{\lceil \frac{d}{2} \rceil + 1} + \varepsilon} + m \log n + n \log m)$ for any $\varepsilon > 0$ and $n$ the size of the first color's set and $m$ the size of the second color's set.
+Later Aggrawal et al.~\cite{Aggrawal1992} give an optimal algorithm to solve the $k$-colored bichromatic all nearest neighbors problem in plane.
+Their aproach uses a Voronoi diagaram to compute the neighbors and has a running time of $O(n \log n)$ for any number of colors.
+This in turn gives a $O(n \log n)$ solution to the bichromatic closest pair.
+Khuller and Matias~\cite{Khuller1995} give a randomized algorithm for the closest pair problem that runs in expected $O(n)$ time which, they argue, can be extended to the bichromatic closest pair problem in higher dimensions with a running time still in expected $O(n)$.
+In the same year Eppstein~\cite{Eppstein1995} gives important algorithms which solve the dynamic Euclidean minimum spanning tree and dynamic bichromatic closest pair.
+The running time of maintaining the Euclidean minimum spannig tree and two colored bichromatic closest pair is $O(n^{1 - \varepsilon})$ where $\varepsilon > 0$ depends on the dimension $d$.
+For rectilinear metrics, the MST can be maintained in time $O(\sqrt{n} \log^d n)$.
+Dumitrescu and Guha~\cite{Dumitrescu2002} gave an MST approach for the $k$-colored bichromatic closest pair in plane with running time $O(n \log n)$ and reduced the $k$-colored bichromatic closest pair problem to $\lceil \log k \rceil$ two-colored bichromatric closest pair problems.
+They also give an algorithm that maintains a bichromatic closest pair under color change with running time $O(\log n)$ per update in any dimension.
+In the same manner, Borgelt and Borglet~\cite{Borgelt2008} give an algorithm that maintains in plain a $k$-colored bichromatic all nearest neighbors with running time $O(n\log n)$ to construct a Voronoi diagram and amortized $O(\log n)$ time to update it.
+With Impagliazzo nad Paturi~\cite{Impagliazzo2001} stating the Strong Exponential Time Hypothesis (SETH) we have conditional lower-bounds on some problems.
+Williams~\cite{Williams2005} proved that SETH implies Orthogonal Vectors Hypothesis (OVH).
+O'Donnell et al.~\cite{ODonnell2009} gave strict bounds on the locality sensitive hashing approach.
+Alman et al.~\cite{Alman2016} give a randomized $(1+\varepsilon)$-approximate all nearest neighbor with expected running time $O(dn + n^{2 - 1/\Omega(\sqrt[3]{\varepsilon}/\log \frac{1}{\varepsilon})})$ for $l_1$ and Euclidean metrics.
+With Bringmann's introduction of Fine-grained complexity theory~\cite{Bringmann2019,Bringmann2021} bichromatic closest pair was researched from a purely theoretical standpoint.
+Improving on to Alman et al.~\cite{Alman2016}, Rubinstein~\cite{Rubinstein2018} proved a better conditional lower-bound on the $(1+\varepsilon)$-approximate bichromatic closest pair with time $O(n^{2-\varepsilon})$, which in turn implies better conditional lower-bounds for approximate bichromatic closest pair queries and approximate bichromatic all nearest neighbors.
+He also pointed out similar results for Hamming distnace and Fr\'{e}chte distance, whereas for $l_1$ and $l_\infty$ exist subquadratic algorithms.
+Pagh et al.~\cite{Pagh2019} proved similar results for $(1+\varepsilon)$-approximate bichromatic closest pair with Jaccard similarity.
+In a different approach, Flores-Velazco and Mount~\cite{FloresVelazco2021} studied the classification and give a datastructure that can query the most occuring color of the $k$ $\varepsilon$-nearest neighbors of a given point.
+Horst et al.~\cite{Horst2022} also provide a datastructure that can answer the most occuring color of the exact $k$ nearest neigbors of a given point.
 
 
 \section{Bichromatic closest pair}
-\ignore{
-\begin{itemize}
-\item
-\href{https://www.cs.umd.edu/class/fall2019/cmsc420-0201/Lects/lect14-kd-query.pdf}{k-d tree, worst case}
-\item
-\href{https://arxiv.org/pdf/1903.04936.pdf}{k-d tree, expected $O\left(2^d + \log n\right)$}
-\item
-\href{https://math.mit.edu/~shor/18.310/huffman.pdf}{Huffman encoding}
-\item
-\href{https://cstheory.stackexchange.com/questions/27499/bichromatic-all-nearest-neighbors}{Closest bichromatic pair}
-\item
-\href{https://www.cs.umd.edu/~nick/papers/nnpaper.pdf}{Nearest Neighbor search}
-\item
-\href{https://arxiv.org/pdf/2110.10283.pdf}{Lower bounds on Nearest Neighbor search}
-\item
-\href{https://www.cs.sbg.ac.at/~forster/courses/polycomp/slides/polycomp02.pdf}{SETH and OVH}
-\item
-\href{https://codeforces.com/blog/entry/45583}{codeforces}
-\item $\mathbb{R}^2$ with $L_1$ metric
-\href{https://stackoverflow.com/questions/8230929/bichromatic-closest-pair-when-r-and-b-are-separated-by-a-vertical-line-continue}{Post 1} and 
-\href{https://stackoverflow.com/questions/8203576/closest-distance-between-two-pointsdisjoint-set}{Post 2} (maybe extendable to general metric using convex hull)
-\item
-\href{https://cp-algorithms.com/geometry/nearest_points.html#algorithm}{Nearest pair of points Competitive Programming}
-\item
-\href{http://web.onda.com.br/abveiga/capitulo14-ingles.pdf}{More Huffman-like trees}
-\href{file:///C:/Users/tprusina/Downloads/forst2005.pdf}{Thorup et al}.
-\end{itemize}
-
-\textbf{Line separated closest pair}
-\begin{itemize}
-\item
-\href{https://cs.stackexchange.com/questions/2415/shortest-distance-between-a-point-in-a-and-a-point-in-b}{Stack exchange proposition}
-\item
-\href{https://cstheory.stackexchange.com/questions/9824/find-shortest-pairwise-distance-of-points-in-on-log-n}{Theorem on lower-bound}
-\item
-\href{https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=7853340637852591905}{Some papers on it}
-\item
-\href{http://www.zgking.com:8080/home/donghui/publications/closestpair.pdf}{On Spatial-Range Closest-Pair Query}
-\item
-\href{http://delab.csd.auth.gr/papers/SIGMOD00cmtv.pdf}{Closest Pair Queries in Spatial Databases}
-\end{itemize}
-
-}
 
 \begin{definition}[bichromatic closest pair]
 For a given dimension $d$, and two sets of points $A, B \subset \mathbb{R}^d$ where $A$ are red colored points and $B$ are blue colored points, compute the
@@ -563,9 +502,6 @@ Let $p$ by any point in $S$ and let $q\in S$ be its bichromatic nearest neighbor
 denote the leaf in the split tree that stores $q$, and let $(S_{w'}, S_u$ is the 
 shortest colorful edge saved with $u$. Then $p\in $
 \end{proof}
-
-\section*{Planar cases}
-\todo{Explain the Voronoi solution, explain simple solution to $l_1$ case.}
 
 %%
 %% Bibliography
