@@ -169,6 +169,25 @@ Pagh et al.~\cite{Pagh2019} proved similar results for $(1+\varepsilon)$-approxi
 In a different approach, Flores-Velazco and Mount~\cite{FloresVelazco2021} studied the classification and give a datastructure that can query the most occuring color of the $k$ $\varepsilon$-nearest neighbors of a given point.
 Horst et al.~\cite{Horst2022} also provide a datastructure that can answer the most occuring color of the exact $k$ nearest neigbors of a given point.
 
+\section{Reduction proof}
+\begin{theorem}
+The $k$-colored bichromatic closest pair problem can be reduced to $\lceil \log k \rceil$ $2$-colored bichromatic closest pair problems.
+\end{theorem}
+\begin{proof}
+  Let $k$ be the number of different colors and let $A_1$, $A_2$, $\dots$, $A_k$ be sets of points coresponding to different colors.
+  To make the proof cleaner, let us relable the sets to $A_0$, $A_1$, $\dots$, $A_{k-1}$.
+  Now construct $\lceil \log k \rceil$ pairs $p_i$ with
+  \[ p_i := \left(\bigcup \limits_{j = 0..(k-1) \wedge i\text{-th bit of }j \text{ is }0} A_j, \bigcup \limits_{j = 0..(k-1) \wedge i\text{-th bit of } j \text{ is }1} A_j\right). \]
+  For $i > \lceil \log k \rceil$, pairs will be of form $( \bigcup A_j, \emptyset)$ and so they are not needed.
+  By computing the $2$-colored bichromatic closest pair between the left and right set of each pair $p_i$ and taking the minimal solution, we get a solution to the $k$-colored bichromatic closest pair.
+  To prove this, assume the $k$-colored bichromatic closest pair is achieved between sets $A_{r_1}$ and $A_{r_2}$.
+  Since $r_1 \neq r_2$ there has to exist a bit in which $r_1$ and $r_2$ differ.
+  Let that be the $s$-th bit.
+  Since they differ in the $s$-th bit, they are split appart in the pair $p_s$.
+  Now the $2$-colored bichromatic pair on this pair $p_s$ will return this solution (or one equally good).
+  And the minimum over all of the pairs should be as good as this solution.
+  
+\end{proof}
 
 \section{Bichromatic closest pair}
 
