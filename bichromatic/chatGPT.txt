@@ -1,0 +1,26 @@
+### TRY 1
+The bichromatic closest pair problem is a fundamental topic in computational geometry that involves finding the closest pair of points, one from each of two given sets of different colors. Over the years, various research papers have contributed to understanding the problem and developing efficient algorithms.
+
+Early work introduced the problem and provided reductions to other geometric problems, such as the Euclidean minimum spanning tree. Randomized algorithms were devised to compute the bichromatic closest pair with time complexities based on the sizes of the input sets.
+
+Researchers explored extensions to the problem, including the k-colored bichromatic all nearest neighbors and maintaining the bichromatic closest pair under color changes. Voronoi diagrams and minimum spanning trees were employed to tackle these variations, resulting in improved algorithms with faster running times.
+
+Conditional lower bounds were established for the problem, building on the Strong Exponential Time Hypothesis (SETH) and the Orthogonal Vectors Hypothesis (OVH). This led to insights into the complexity of approximate solutions and various distance metrics, with some metrics exhibiting subquadratic algorithms.
+
+Additionally, investigations explored the use of data structures for related tasks, such as determining the most occurring color among the nearest neighbors of a given point.
+
+In summary, the bichromatic closest pair problem has been extensively studied, leading to algorithmic advancements, conditional lower bounds, and applications in other geometric problems. These findings have contributed to a deeper understanding of computational geometry and paved the way for future research in the field.
+
+### TRY 2
+Title: Efficient Algorithms for the Bichromatic Closest Pair Problem in Computational Geometry
+
+Abstract:
+The bichromatic closest pair problem is a well-known and extensively studied problem in computational geometry that involves finding the closest pair of points, one from each of two given sets with different colors. In this paper, we present novel algorithms and techniques to efficiently solve this problem.
+
+We begin by reviewing the foundational work in the field, including reductions to other geometric problems and the development of randomized algorithms. We then explore the extensions of the problem, such as the k-colored bichromatic all nearest neighbors and the maintenance of the bichromatic closest pair under color changes. We introduce advanced data structures, such as Voronoi diagrams and minimum spanning trees, to solve these variations, resulting in improved algorithms with faster running times.
+
+Furthermore, we investigate conditional lower bounds based on the Strong Exponential Time Hypothesis (SETH) and the Orthogonal Vectors Hypothesis (OVH), providing insights into the complexity of approximate solutions and various distance metrics. We highlight the existence of subquadratic algorithms for certain distance metrics, such as Hamming distance and Fréchet distance, while also discussing their limitations for other metrics.
+
+Additionally, we examine the utilization of data structures for related tasks, such as determining the most occurring color among the nearest neighbors of a given point. These structures offer practical applications in classification problems and provide efficient query capabilities.
+
+Through our research, we contribute to the existing body of knowledge on the bichromatic closest pair problem, presenting algorithmic advancements, conditional lower bounds, and insights into various distance metrics. Our findings not only enhance the understanding of computational geometry but also pave the way for future developments in this field.
